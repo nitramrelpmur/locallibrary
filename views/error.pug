@@ -1,0 +1,7 @@
+extends layout_base
+block main  
+  div(class='col-sm-12')
+    block content
+      h1= error.status + ' ' + error.message
+      if error.stack
+        pre #{error.stack}

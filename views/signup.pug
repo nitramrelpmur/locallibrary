@@ -1,0 +1,22 @@
+extends layout_base
+block main  
+  div(class='col-sm-12')
+    block content
+      h1 Local Library
+      p.notice Create an account to access our database.
+      if message
+        p.error= message
+      form#signup(method='post')
+        div.form-group
+          label.form-label(for='username') Username:
+          input#username.form-control(type='text', name='username', required)
+          label.form-label(for='password') Password:
+          input#password.form-control(type='password', name='password', required)
+          label.form-label(for='password_confirmed') Confirm password:
+          input#password_confirmed.form-control(type='password', name='password_confirmed', required)
+        button.btn.btn-primary(type='submit') Sign up
+
+      if errors
+        ul
+          for error in errors
+            li!= error.msg || error

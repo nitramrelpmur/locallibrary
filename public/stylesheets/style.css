@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+form#login, form#signup {
+  max-width: 400px;
+}
+
+p.notice {
+  font-size: larger;
+  margin-top: 1em;
+}
+
+p.error {
+  font-size: larger;
+  color: red;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,23 @@
+extends layout_base
+block main  
+  div(class='col-sm-12')
+    block content
+      h1 Local Library
+      p You can use <strong>guest</strong> and <strong>letmein</strong> to login as a guest.
+      if message
+        p.error= message
+      form#login(method='post')
+        div.form-group
+          label.form-label(for='username') Username:
+          input#username.form-control(type='text', name='username')
+          label.form-label(for='password') Password:
+          input#password.form-control(type='password', name='password')
+        button.btn.btn-primary(type='submit') Sign in
+
+      p.notice Don't have an account yet? 
+        a(href="/users/signup") Register now
+
+      if errors
+        ul
+          for error in errors
+            li!= error.msg || error
